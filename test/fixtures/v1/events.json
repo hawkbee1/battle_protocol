@@ -1,0 +1,356 @@
+{
+  "order_refused": {
+    "v": 1,
+    "type": "order_refused",
+    "seq": 1001,
+    "reason": "not_enough_ap"
+  },
+  "order_delayed": {
+    "v": 1,
+    "type": "order_delayed",
+    "seq": 1002,
+    "until_us": 7230000000
+  },
+  "move_started": {
+    "v": 1,
+    "type": "move_started",
+    "mover": "u-jeep-7",
+    "arrives_at_us": 3612345678
+  },
+  "move_stopped": {
+    "v": 1,
+    "type": "move_stopped",
+    "mover": "hq-red",
+    "at": [
+      5003.4,
+      221.0,
+      31.0
+    ]
+  },
+  "attacked": {
+    "v": 1,
+    "type": "attacked",
+    "attacker": "u-artillery-2",
+    "section": "s-1c9e",
+    "weapon": "artillery",
+    "hit": false,
+    "impacts": [
+      {
+        "target": "u-rifle-9",
+        "target_type": "soldier",
+        "damage": 38.5,
+        "friendly": true,
+        "result": "killed"
+      },
+      {
+        "target": "u-enemy-4",
+        "target_type": "commander",
+        "damage": 12.125,
+        "friendly": false,
+        "result": "damaged"
+      },
+      {
+        "target": "tree@(3, 4)",
+        "target_type": "tree",
+        "damage": 0.1,
+        "friendly": false,
+        "result": "prisoner"
+      },
+      {
+        "target": "u-enemy-5",
+        "target_type": "jeep",
+        "damage": 180.0,
+        "friendly": false,
+        "result": "defected"
+      }
+    ]
+  },
+  "crushed": {
+    "v": 1,
+    "type": "crushed",
+    "by": "relic-3",
+    "unit": "u-enemy-6",
+    "unit_type": "soldier"
+  },
+  "weapon_dropped": {
+    "v": 1,
+    "type": "weapon_dropped",
+    "dropped": "w-17",
+    "weapon": "rifle",
+    "at": [
+      812.07,
+      333.3,
+      12.0
+    ],
+    "gone_at_us": 14400000000
+  },
+  "weapon_picked_up": {
+    "v": 1,
+    "type": "weapon_picked_up",
+    "unit": "u-soldier-4",
+    "dropped": "w-17"
+  },
+  "weapon_swapped": {
+    "v": 1,
+    "type": "weapon_swapped",
+    "unit": "u-soldier-4",
+    "weapon": "anti_air",
+    "ready_at_us": 3605000000
+  },
+  "time_only_started": {
+    "v": 1,
+    "type": "time_only_started",
+    "unit": "u-helicopter-1",
+    "action": "take_off",
+    "ends_at_us": 3630000000
+  },
+  "embarked": {
+    "v": 1,
+    "type": "embarked",
+    "unit": "u-soldier-4",
+    "transport": "u-truck-2"
+  },
+  "disembarked": {
+    "v": 1,
+    "type": "disembarked",
+    "unit": "u-soldier-4",
+    "at": [
+      900.0,
+      401.5,
+      8.25
+    ]
+  },
+  "build_started": {
+    "v": 1,
+    "type": "build_started",
+    "unit": "u-engineer-1",
+    "site": "reinforced_bridge@(40, 12)",
+    "structure": "reinforced_bridge",
+    "cells": [
+      [
+        40,
+        12
+      ],
+      [
+        41,
+        12
+      ],
+      [
+        42,
+        12
+      ]
+    ],
+    "ends_at_us": 4200000000
+  },
+  "repair_started": {
+    "v": 1,
+    "type": "repair_started",
+    "unit": "u-engineer-1",
+    "target": "u-tank-3",
+    "ends_at_us": 4500000000
+  },
+  "work_resumed": {
+    "v": 1,
+    "type": "work_resumed",
+    "unit": "u-engineer-2",
+    "work": "wall@(40, 13)",
+    "ends_at_us": 4800000000
+  },
+  "work_interrupted": {
+    "v": 1,
+    "type": "work_interrupted",
+    "unit": "u-engineer-2",
+    "work": "wall@(40, 13)"
+  },
+  "structure_built": {
+    "v": 1,
+    "type": "structure_built",
+    "site": "ladder@(7, 9)",
+    "structure": "ladder",
+    "cells": [
+      [
+        7,
+        9
+      ],
+      [
+        2,
+        2,
+        "sky"
+      ]
+    ]
+  },
+  "repaired": {
+    "v": 1,
+    "type": "repaired",
+    "target": "u-tank-3",
+    "hp": 400.0
+  },
+  "unit_healed": {
+    "v": 1,
+    "type": "unit_healed",
+    "unit": "u-medic-1",
+    "target": "u-rifle-1",
+    "hp": 47.5
+  },
+  "observation_started": {
+    "v": 1,
+    "type": "observation_started",
+    "unit": "u-scout-1",
+    "ends_at_us": 5400000000
+  },
+  "added_to_capture": {
+    "v": 1,
+    "type": "added_to_capture",
+    "unit": "u-rifle-1",
+    "relic": "relic-3",
+    "pot_ap": 50.0,
+    "captured_at_us": 5400000000
+  },
+  "added_to_push": {
+    "v": 1,
+    "type": "added_to_push",
+    "unit": "u-rifle-1",
+    "relic": "relic-3",
+    "pot_ap": 15.0
+  },
+  "capture_lost": {
+    "v": 1,
+    "type": "capture_lost",
+    "relic": "relic-3",
+    "team": "blue"
+  },
+  "relic_captured": {
+    "v": 1,
+    "type": "relic_captured",
+    "relic": "relic-3",
+    "team": "red",
+    "previous_owner": "blue"
+  },
+  "relic_lost": {
+    "v": 1,
+    "type": "relic_lost",
+    "relic": "relic-5"
+  },
+  "victory_hold_started": {
+    "v": 1,
+    "type": "victory_hold_started",
+    "team": "red",
+    "wins_at_us": 266400000000
+  },
+  "victory_hold_reset": {
+    "v": 1,
+    "type": "victory_hold_reset",
+    "team": "red"
+  },
+  "eliminated": {
+    "v": 1,
+    "type": "eliminated",
+    "team": "green",
+    "loss": "lost_with_bridge"
+  },
+  "unit_stored": {
+    "v": 1,
+    "type": "unit_stored",
+    "unit": "u-rifle-1"
+  },
+  "recall_began": {
+    "v": 1,
+    "type": "recall_began",
+    "unit": "u-tank-3",
+    "stored_at_us": 25200000000
+  },
+  "unit_deployed": {
+    "v": 1,
+    "type": "unit_deployed",
+    "unit": "u-tank-3",
+    "at": [
+      5015.5,
+      230.0,
+      31.0
+    ]
+  },
+  "section_locked": {
+    "v": 1,
+    "type": "section_locked",
+    "section": "s-1c9e",
+    "until_us": 111600000000
+  },
+  "unit_purchased": {
+    "v": 1,
+    "type": "unit_purchased",
+    "section": "s-1c9e",
+    "unit": "u-radio-1",
+    "unit_type": "radio",
+    "price": 100
+  },
+  "weapon_purchased": {
+    "v": 1,
+    "type": "weapon_purchased",
+    "section": "s-1c9e",
+    "weapon": "machine_gun",
+    "price": 100
+  },
+  "money_transferred": {
+    "v": 1,
+    "type": "money_transferred",
+    "from_section": "s-1c9e",
+    "to_section": "s-8f2a",
+    "received": 245,
+    "fee": 5
+  },
+  "node_purchased": {
+    "v": 1,
+    "type": "node_purchased",
+    "unit": "u-tank-3",
+    "stat": "move_speed",
+    "step": 4
+  },
+  "offer_posted": {
+    "v": 1,
+    "type": "offer_posted",
+    "offer": 1024,
+    "captor_section": "s-1c9e",
+    "owner_section": "s-8f2a",
+    "released": [
+      "u-enemy-1",
+      "u-enemy-2"
+    ],
+    "wanted": [
+      "u-rifle-9"
+    ],
+    "price": 0
+  },
+  "offer_accepted": {
+    "v": 1,
+    "type": "offer_accepted",
+    "offer": 1024
+  },
+  "offer_refused": {
+    "v": 1,
+    "type": "offer_refused",
+    "offer": 1025
+  },
+  "manager_changed": {
+    "v": 1,
+    "type": "manager_changed",
+    "team": "red",
+    "account": "a-6531d2f0b8c4"
+  },
+  "battle_started": {
+    "v": 1,
+    "type": "battle_started",
+    "battle": "b-2026-11-war-1",
+    "map": "valley",
+    "seed": 3735928559
+  },
+  "battle_ended": {
+    "v": 1,
+    "type": "battle_ended",
+    "winner": "red",
+    "kind": "relics",
+    "eliminated": [
+      "green",
+      "blue"
+    ]
+  }
+}
