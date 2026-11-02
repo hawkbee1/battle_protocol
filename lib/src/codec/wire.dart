@@ -223,11 +223,12 @@ void writeOrder(FieldWriter w, Order order) {
         ..choice('type', _OrderTag.capture)
         ..text('unit', unitId)
         ..text('relic', relicId);
-    case Push(:final unitId, :final relicId):
+    case Push(:final unitId, :final relicId, :final path):
       w
         ..choice('type', _OrderTag.push)
         ..text('unit', unitId)
-        ..text('relic', relicId);
+        ..text('relic', relicId)
+        ..maybe('path', path, _writePath);
     case Store(:final unitId):
       _unit(w, _OrderTag.store, unitId);
     case Recall(:final unitId):
@@ -337,7 +338,11 @@ Order readOrder(FieldReader r) {
     _OrderTag.heal => Heal(unitId: unit(), targetId: r.text('target')),
     _OrderTag.observe => Observe(unitId: unit()),
     _OrderTag.capture => Capture(unitId: unit(), relicId: r.text('relic')),
-    _OrderTag.push => Push(unitId: unit(), relicId: r.text('relic')),
+    _OrderTag.push => Push(
+      unitId: unit(),
+      relicId: r.text('relic'),
+      path: r.maybe('path', _readPath),
+    ),
     _OrderTag.store => Store(unitId: unit()),
     _OrderTag.recall => Recall(unitId: unit()),
     _OrderTag.deploy => Deploy(unitId: unit()),

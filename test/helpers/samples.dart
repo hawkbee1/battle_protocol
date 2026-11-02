@@ -44,7 +44,11 @@ final sampleOrders = <String, Order>{
   'heal': const Heal(unitId: 'u-medic-1', targetId: 'u-rifle-1'),
   'observe': const Observe(unitId: 'u-scout-1'),
   'capture': const Capture(unitId: 'u-rifle-1', relicId: 'relic-3'),
-  'push': const Push(unitId: 'u-rifle-1', relicId: 'relic-3'),
+  'push': const Push(
+    unitId: 'u-rifle-1',
+    relicId: 'relic-3',
+    path: [Cell(60, 20), Cell(61, 20), Cell(62, 21)],
+  ),
   'store': const Store(unitId: 'u-rifle-1'),
   'recall': const Recall(unitId: 'u-tank-3'),
   'deploy': const Deploy(unitId: 'u-tank-3'),

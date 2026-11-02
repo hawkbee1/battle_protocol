@@ -271,17 +271,23 @@ final class Capture extends UnitOrder {
 
 /// {@template push}
 /// [unitId] adds its contribution to the push pot of [relicId]
-/// (RELIC-24, COMBAT-08).
+/// (RELIC-24, COMBAT-08). The first push while the pot is empty sets the
+/// relic's [path]; later pushes follow it until the pot is empty again
+/// (decision 219).
 /// {@endtemplate}
 final class Push extends UnitOrder {
   /// {@macro push}
-  const new({required super.unitId, required this.relicId});
+  const new({required super.unitId, required this.relicId, this.path});
 
   /// The relic.
   final String relicId;
 
+  /// The path the pusher's player chooses, from the relic's cell; the host
+  /// uses it only when the pot is empty.
+  final List<Cell>? path;
+
   @override
-  List<Object?> get props => [unitId, relicId];
+  List<Object?> get props => [unitId, relicId, path];
 }
 
 /// {@template store}
