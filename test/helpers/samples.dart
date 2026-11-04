@@ -71,6 +71,7 @@ final sampleOrders = <String, Order>{
   'accept_offer': const AcceptOffer(offerId: 1024),
   'refuse_offer': const RefuseOffer(offerId: 1025),
   'delegate_hq': const DelegateHq(accountId: 'a-6531d2f0b8c4'),
+  'enter_battle': const EnterBattle(),
 };
 
 const _sender = Sender(accountId: 'a-6531d2f0b8c4', sectionId: 's-1c9e');

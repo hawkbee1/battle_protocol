@@ -941,8 +941,9 @@ final class OfferRefused extends BattleEvent {
 // The battle.
 
 /// {@template manager_changed}
-/// [accountId] manages the HQ of [team]: fixed at the battle start, then
-/// changed by delegation (HQ-05, HQ-07).
+/// [accountId] manages the HQ of [team]: the first of its players to log
+/// in, a higher-ranking one who logs in later, or the one the role is
+/// delegated to (HQ-05, HQ-07, decision 220).
 /// {@endtemplate}
 final class ManagerChanged extends BattleEvent {
   /// {@macro manager_changed}
