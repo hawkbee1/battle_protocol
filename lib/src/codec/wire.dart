@@ -46,6 +46,7 @@ enum _OrderTag {
   acceptOffer,
   refuseOffer,
   delegateHq,
+  enterBattle,
 }
 
 /// The `type` of an event.
@@ -285,6 +286,8 @@ void writeOrder(FieldWriter w, Order order) {
       w
         ..choice('type', _OrderTag.delegateHq)
         ..text('account', accountId);
+    case EnterBattle():
+      w.choice('type', _OrderTag.enterBattle);
   }
 }
 
@@ -375,6 +378,7 @@ Order readOrder(FieldReader r) {
     _OrderTag.acceptOffer => AcceptOffer(offerId: r.integer('offer')),
     _OrderTag.refuseOffer => RefuseOffer(offerId: r.integer('offer')),
     _OrderTag.delegateHq => DelegateHq(accountId: r.text('account')),
+    _OrderTag.enterBattle => const EnterBattle(),
   };
 }
 

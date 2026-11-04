@@ -498,3 +498,13 @@ final class DelegateHq extends Order {
   @override
   List<Object?> get props => [accountId];
 }
+
+/// {@template enter_battle}
+/// The player of the sender's section logs in to the battle. The server
+/// sends it, so the log holds who may take the HQ manager role (HQ-07,
+/// decision 220).
+/// {@endtemplate}
+final class EnterBattle extends Order {
+  /// {@macro enter_battle}
+  const new();
+}
