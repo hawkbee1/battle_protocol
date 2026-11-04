@@ -1013,3 +1013,67 @@ final class BattleEnded extends BattleEvent {
   @override
   List<Object?> get props => [winner, kind, eliminated];
 }
+
+// The world (MAP-06 to MAP-10).
+
+/// {@template object_damaged}
+/// The [object] on [cells] took a hit and has [hp] HP left (MAP-10): a
+/// tree, a building or a construction.
+/// {@endtemplate}
+final class ObjectDamaged extends BattleEvent {
+  /// {@macro object_damaged}
+  const new({required this.object, required this.cells, required this.hp});
+
+  /// The object type.
+  final String object;
+
+  /// Where it stands: one cell, or both ends of a ladder or a bridge to an
+  /// island.
+  final List<Cell> cells;
+
+  /// Its HP left.
+  final double hp;
+
+  @override
+  List<Object?> get props => [object, cells, hp];
+}
+
+/// {@template object_destroyed}
+/// The [object] on [cells] was destroyed: it stops blocking and never
+/// regrows (MAP-09, MAP-28); a destroyed ladder or bridge may strand units
+/// (MAP-37).
+/// {@endtemplate}
+final class ObjectDestroyed extends BattleEvent {
+  /// {@macro object_destroyed}
+  const new({required this.object, required this.cells});
+
+  /// The object type.
+  final String object;
+
+  /// Where it stood.
+  final List<Cell> cells;
+
+  @override
+  List<Object?> get props => [object, cells];
+}
+
+/// {@template crater_dug}
+/// A shot dug a crater at [at], [radiusM] wide and [depthM] deep at its
+/// centre (MAP-07, MAP-46).
+/// {@endtemplate}
+final class CraterDug extends BattleEvent {
+  /// {@macro crater_dug}
+  const new({required this.at, required this.radiusM, required this.depthM});
+
+  /// Its centre, on the ground.
+  final Position at;
+
+  /// Its radius, in metres.
+  final double radiusM;
+
+  /// Its depth at the centre, in metres.
+  final double depthM;
+
+  @override
+  List<Object?> get props => [at, radiusM, depthM];
+}

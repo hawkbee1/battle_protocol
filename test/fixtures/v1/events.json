@@ -352,5 +352,44 @@
       "green",
       "blue"
     ]
+  },
+  "object_damaged": {
+    "v": 1,
+    "type": "object_damaged",
+    "object": "wall",
+    "cells": [
+      [
+        31,
+        7
+      ]
+    ],
+    "hp": 120.5
+  },
+  "object_destroyed": {
+    "v": 1,
+    "type": "object_destroyed",
+    "object": "ladder",
+    "cells": [
+      [
+        12,
+        4
+      ],
+      [
+        13,
+        4,
+        "north"
+      ]
+    ]
+  },
+  "crater_dug": {
+    "v": 1,
+    "type": "crater_dug",
+    "at": [
+      5003.4,
+      221.0,
+      31.0
+    ],
+    "radius_m": 8.0,
+    "depth_m": 1.5
   }
 }

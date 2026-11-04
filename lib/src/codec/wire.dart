@@ -93,6 +93,9 @@ enum _EventTag {
   managerChanged,
   battleStarted,
   battleEnded,
+  objectDamaged,
+  objectDestroyed,
+  craterDug,
 }
 
 /// Writes a log entry.
@@ -676,6 +679,23 @@ void writeEvent(FieldWriter w, BattleEvent event) {
         ..text('winner', winner)
         ..choice('kind', kind)
         ..texts('eliminated', eliminated);
+    case ObjectDamaged(:final object, :final cells, :final hp):
+      w
+        ..choice('type', _EventTag.objectDamaged)
+        ..text('object', object)
+        ..cells('cells', cells)
+        ..number('hp', hp);
+    case ObjectDestroyed(:final object, :final cells):
+      w
+        ..choice('type', _EventTag.objectDestroyed)
+        ..text('object', object)
+        ..cells('cells', cells);
+    case CraterDug(:final at, :final radiusM, :final depthM):
+      w
+        ..choice('type', _EventTag.craterDug)
+        ..position('at', at)
+        ..number('radius_m', radiusM)
+        ..number('depth_m', depthM);
   }
 }
 
@@ -866,6 +886,20 @@ BattleEvent readEvent(FieldReader r) {
       winner: r.text('winner'),
       kind: r.choice('kind', WinKind.values),
       eliminated: r.texts('eliminated'),
+    ),
+    _EventTag.objectDamaged => ObjectDamaged(
+      object: r.text('object'),
+      cells: r.cells('cells'),
+      hp: r.number('hp'),
+    ),
+    _EventTag.objectDestroyed => ObjectDestroyed(
+      object: r.text('object'),
+      cells: r.cells('cells'),
+    ),
+    _EventTag.craterDug => CraterDug(
+      at: r.position('at'),
+      radiusM: r.number('radius_m'),
+      depthM: r.number('depth_m'),
     ),
   };
 }
