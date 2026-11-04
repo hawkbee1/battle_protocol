@@ -1,0 +1,140 @@
+{
+  "battle_start": {
+    "v": 1,
+    "at_us": 0,
+    "events": [
+      {
+        "type": "battle_started",
+        "battle": "b-2026-11-war-1",
+        "map": "valley",
+        "seed": 3735928559
+      },
+      {
+        "type": "manager_changed",
+        "team": "red",
+        "account": "a-6531d2f0b8c4"
+      }
+    ]
+  },
+  "attack": {
+    "v": 1,
+    "at_us": 3602000001,
+    "command": {
+      "seq": 1002,
+      "origin": "server",
+      "sender": {
+        "account": "a-6531d2f0b8c4",
+        "section": "s-1c9e"
+      },
+      "sent_at_us": 3602000125,
+      "order": {
+        "type": "fire_at_position",
+        "unit": "u-artillery-2",
+        "target": [
+          4000.0,
+          -12.25,
+          0.0
+        ]
+      }
+    },
+    "events": [
+      {
+        "type": "attacked",
+        "attacker": "u-artillery-2",
+        "section": "s-1c9e",
+        "weapon": "artillery",
+        "hit": false,
+        "impacts": [
+          {
+            "target": "u-rifle-9",
+            "target_type": "soldier",
+            "damage": 38.5,
+            "friendly": true,
+            "result": "killed"
+          },
+          {
+            "target": "u-enemy-4",
+            "target_type": "commander",
+            "damage": 12.125,
+            "friendly": false,
+            "result": "damaged"
+          },
+          {
+            "target": "tree@(3, 4)",
+            "target_type": "tree",
+            "damage": 0.1,
+            "friendly": false,
+            "result": "prisoner"
+          },
+          {
+            "target": "u-enemy-5",
+            "target_type": "jeep",
+            "damage": 180.0,
+            "friendly": false,
+            "result": "defected"
+          }
+        ]
+      },
+      {
+        "type": "weapon_dropped",
+        "dropped": "w-17",
+        "weapon": "rifle",
+        "at": [
+          812.07,
+          333.3,
+          12.0
+        ],
+        "gone_at_us": 14400000000
+      }
+    ]
+  },
+  "delayed_heal": {
+    "v": 1,
+    "at_us": 3615000000,
+    "command": {
+      "seq": 1015,
+      "origin": "player",
+      "sender": {
+        "account": "a-6531d2f0b8c4",
+        "section": "s-1c9e"
+      },
+      "sent_at_us": 3615000125,
+      "order": {
+        "type": "heal",
+        "unit": "u-medic-1",
+        "target": "u-rifle-1"
+      }
+    },
+    "events": [
+      {
+        "type": "order_delayed",
+        "seq": 1015,
+        "until_us": 7200000000
+      }
+    ]
+  },
+  "heal_done": {
+    "v": 1,
+    "at_us": 7200000000,
+    "events": [
+      {
+        "type": "unit_healed",
+        "unit": "u-medic-1",
+        "target": "u-rifle-1",
+        "hp": 47.5
+      }
+    ]
+  },
+  "capture_done": {
+    "v": 1,
+    "at_us": 5400000000,
+    "events": [
+      {
+        "type": "relic_captured",
+        "relic": "relic-3",
+        "team": "red",
+        "previous_owner": "blue"
+      }
+    ]
+  }
+}
