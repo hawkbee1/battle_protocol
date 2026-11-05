@@ -1077,3 +1077,50 @@ final class CraterDug extends BattleEvent {
   @override
   List<Object?> get props => [at, radiusM, depthM];
 }
+
+/// {@template joined_unit}
+/// A unit a section brings into the battle: its [unitId] and [unitType].
+/// {@endtemplate}
+final class JoinedUnit extends Equatable {
+  /// {@macro joined_unit}
+  const new({required this.unitId, required this.unitType});
+
+  /// The unit.
+  final String unitId;
+
+  /// Its unit type.
+  final String unitType;
+
+  @override
+  List<Object?> get props => [unitId, unitType];
+}
+
+/// {@template section_joined}
+/// [sectionId], the section of the player [accountId], joined [team] with
+/// its [units]: at the battle start, or later for a newcomer (SOC-30). The
+/// statistics learn from it whose each unit is (decisions 74, 143).
+/// {@endtemplate}
+final class SectionJoined extends BattleEvent {
+  /// {@macro section_joined}
+  const new({
+    required this.sectionId,
+    required this.accountId,
+    required this.team,
+    required this.units,
+  });
+
+  /// The section.
+  final String sectionId;
+
+  /// Its player's account.
+  final String accountId;
+
+  /// Its team.
+  final String team;
+
+  /// Its units, the commander included.
+  final List<JoinedUnit> units;
+
+  @override
+  List<Object?> get props => [sectionId, accountId, team, units];
+}

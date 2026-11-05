@@ -312,6 +312,15 @@ final sampleEvents = <String, BattleEvent>{
     radiusM: 8,
     depthM: 1.5,
   ),
+  'section_joined': const SectionJoined(
+    sectionId: 'sec-7',
+    accountId: 'acc-7',
+    team: 'red',
+    units: [
+      JoinedUnit(unitId: 'cmd-7', unitType: 'commander'),
+      JoinedUnit(unitId: 'sol-71', unitType: 'soldier'),
+    ],
+  ),
 };
 
 /// Log entries: the battle start, an attack with its outcome in the same

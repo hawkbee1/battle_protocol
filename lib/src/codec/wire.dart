@@ -96,6 +96,7 @@ enum _EventTag {
   objectDamaged,
   objectDestroyed,
   craterDug,
+  sectionJoined,
 }
 
 /// Writes a log entry.
@@ -696,8 +697,27 @@ void writeEvent(FieldWriter w, BattleEvent event) {
         ..position('at', at)
         ..number('radius_m', radiusM)
         ..number('depth_m', depthM);
+    case SectionJoined(
+      :final sectionId,
+      :final accountId,
+      :final team,
+      :final units,
+    ):
+      w
+        ..choice('type', _EventTag.sectionJoined)
+        ..text('section', sectionId)
+        ..text('account', accountId)
+        ..text('team', team)
+        ..items('units', units, _writeJoinedUnit);
   }
 }
+
+void _writeJoinedUnit(FieldWriter w, JoinedUnit unit) => w
+  ..text('unit', unit.unitId)
+  ..text('unit_type', unit.unitType);
+
+JoinedUnit _readJoinedUnit(FieldReader r) =>
+    JoinedUnit(unitId: r.text('unit'), unitType: r.text('unit_type'));
 
 /// Reads an event.
 BattleEvent readEvent(FieldReader r) {
@@ -900,6 +920,12 @@ BattleEvent readEvent(FieldReader r) {
       at: r.position('at'),
       radiusM: r.number('radius_m'),
       depthM: r.number('depth_m'),
+    ),
+    _EventTag.sectionJoined => SectionJoined(
+      sectionId: r.text('section'),
+      accountId: r.text('account'),
+      team: r.text('team'),
+      units: r.items('units', _readJoinedUnit),
     ),
   };
 }
