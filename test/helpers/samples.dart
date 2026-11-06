@@ -295,6 +295,32 @@ final sampleEvents = <String, BattleEvent>{
     kind: WinKind.relics,
     eliminated: ['green', 'blue'],
   ),
+  'object_damaged': const ObjectDamaged(
+    object: 'wall',
+    cells: [Cell(31, 7)],
+    hp: 120.5,
+  ),
+  'object_destroyed': const ObjectDestroyed(
+    object: 'ladder',
+    cells: [
+      Cell(12, 4),
+      Cell(13, 4, island: 'north'),
+    ],
+  ),
+  'crater_dug': CraterDug(
+    at: Position.metres(5003.4, 221, 31),
+    radiusM: 8,
+    depthM: 1.5,
+  ),
+  'section_joined': const SectionJoined(
+    sectionId: 'sec-7',
+    accountId: 'acc-7',
+    team: 'red',
+    units: [
+      JoinedUnit(unitId: 'cmd-7', unitType: 'commander'),
+      JoinedUnit(unitId: 'sol-71', unitType: 'soldier'),
+    ],
+  ),
 };
 
 /// Log entries: the battle start, an attack with its outcome in the same

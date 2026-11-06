@@ -1013,3 +1013,114 @@ final class BattleEnded extends BattleEvent {
   @override
   List<Object?> get props => [winner, kind, eliminated];
 }
+
+// The world (MAP-06 to MAP-10).
+
+/// {@template object_damaged}
+/// The [object] on [cells] took a hit and has [hp] HP left (MAP-10): a
+/// tree, a building or a construction.
+/// {@endtemplate}
+final class ObjectDamaged extends BattleEvent {
+  /// {@macro object_damaged}
+  const new({required this.object, required this.cells, required this.hp});
+
+  /// The object type.
+  final String object;
+
+  /// Where it stands: one cell, or both ends of a ladder or a bridge to an
+  /// island.
+  final List<Cell> cells;
+
+  /// Its HP left.
+  final double hp;
+
+  @override
+  List<Object?> get props => [object, cells, hp];
+}
+
+/// {@template object_destroyed}
+/// The [object] on [cells] was destroyed: it stops blocking and never
+/// regrows (MAP-09, MAP-28); a destroyed ladder or bridge may strand units
+/// (MAP-37).
+/// {@endtemplate}
+final class ObjectDestroyed extends BattleEvent {
+  /// {@macro object_destroyed}
+  const new({required this.object, required this.cells});
+
+  /// The object type.
+  final String object;
+
+  /// Where it stood.
+  final List<Cell> cells;
+
+  @override
+  List<Object?> get props => [object, cells];
+}
+
+/// {@template crater_dug}
+/// A shot dug a crater at [at], [radiusM] wide and [depthM] deep at its
+/// centre (MAP-07, MAP-46).
+/// {@endtemplate}
+final class CraterDug extends BattleEvent {
+  /// {@macro crater_dug}
+  const new({required this.at, required this.radiusM, required this.depthM});
+
+  /// Its centre, on the ground.
+  final Position at;
+
+  /// Its radius, in metres.
+  final double radiusM;
+
+  /// Its depth at the centre, in metres.
+  final double depthM;
+
+  @override
+  List<Object?> get props => [at, radiusM, depthM];
+}
+
+/// {@template joined_unit}
+/// A unit a section brings into the battle: its [unitId] and [unitType].
+/// {@endtemplate}
+final class JoinedUnit extends Equatable {
+  /// {@macro joined_unit}
+  const new({required this.unitId, required this.unitType});
+
+  /// The unit.
+  final String unitId;
+
+  /// Its unit type.
+  final String unitType;
+
+  @override
+  List<Object?> get props => [unitId, unitType];
+}
+
+/// {@template section_joined}
+/// [sectionId], the section of the player [accountId], joined [team] with
+/// its [units]: at the battle start, or later for a newcomer (SOC-30). The
+/// statistics learn from it whose each unit is (decisions 74, 143).
+/// {@endtemplate}
+final class SectionJoined extends BattleEvent {
+  /// {@macro section_joined}
+  const new({
+    required this.sectionId,
+    required this.accountId,
+    required this.team,
+    required this.units,
+  });
+
+  /// The section.
+  final String sectionId;
+
+  /// Its player's account.
+  final String accountId;
+
+  /// Its team.
+  final String team;
+
+  /// Its units, the commander included.
+  final List<JoinedUnit> units;
+
+  @override
+  List<Object?> get props => [sectionId, accountId, team, units];
+}
