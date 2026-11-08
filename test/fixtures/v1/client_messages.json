@@ -1,0 +1,45 @@
+{
+  "sign_in": {
+    "v": 1,
+    "type": "sign_in",
+    "battle": "b-0f3e91c2",
+    "kind": "jwt",
+    "credential": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJhLTY1MzEifQ.c2lnbmF0dXJl"
+  },
+  "sign_in_api_key": {
+    "v": 1,
+    "type": "sign_in",
+    "battle": "b-0f3e91c2",
+    "kind": "api_key",
+    "credential": "btk_q2YvW8n0x1Hc5lZtR3pK7sD9fG4jB6mN2aE8uV0iO1y"
+  },
+  "send_command": {
+    "v": 1,
+    "type": "send_command",
+    "request": 4096,
+    "command": {
+      "sender": {
+        "account": "a-6531d2f0b8c4",
+        "section": "s-1c9e"
+      },
+      "sent_at_us": 18000120000,
+      "order": {
+        "type": "move",
+        "unit": "u-jeep-7",
+        "to": [
+          4230.5,
+          25120.0,
+          41.0
+        ]
+      }
+    }
+  },
+  "resync_request": {
+    "v": 1,
+    "type": "resync_request"
+  },
+  "heartbeat": {
+    "v": 1,
+    "type": "heartbeat"
+  }
+}

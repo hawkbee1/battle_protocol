@@ -1,0 +1,1113 @@
+{
+  "sign_in_accepted": {
+    "v": 1,
+    "type": "sign_in_accepted",
+    "account": "a-6531d2f0b8c4",
+    "section": "s-1c9e",
+    "team": "team-red",
+    "battle_time_us": 18000250000
+  },
+  "sign_in_refused": {
+    "v": 1,
+    "type": "sign_in_refused",
+    "reason": "no_section"
+  },
+  "command_accepted": {
+    "v": 1,
+    "type": "command_accepted",
+    "request": 4096,
+    "seq": 7311
+  },
+  "command_refused": {
+    "v": 1,
+    "type": "command_refused",
+    "request": 4097,
+    "reason": "target_not_seen"
+  },
+  "section_view": {
+    "v": 1,
+    "type": "section_view",
+    "at_us": 18003000000,
+    "section": {
+      "money": 1250,
+      "xp": 340.5,
+      "locked_until_us": 21600000000,
+      "stored_weapons": [
+        "anti_tank"
+      ],
+      "prisoners": [
+        {
+          "unit": "u-enemy-3",
+          "unit_type": "scout"
+        }
+      ],
+      "offers": [
+        {
+          "offer": 1024,
+          "captor_section": "s-1c9e",
+          "owner_section": "s-8f2a",
+          "released": [
+            "u-enemy-3"
+          ],
+          "wanted": [
+            "u-rifle-9"
+          ],
+          "price": 0
+        }
+      ]
+    },
+    "units": [
+      {
+        "unit": "u-rifle-1",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 97.5,
+        "max_hp": 100.0,
+        "position": [
+          4230.5,
+          25113.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "machine_gun",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 29.0,
+            "at_us": 18001000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 9,
+          "xp_earned": 121.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-truck-2",
+        "unit_type": "truck",
+        "section": "s-1c9e",
+        "hp": 200.0,
+        "max_hp": 200.0,
+        "flying": false,
+        "private": {
+          "place": "stored",
+          "ap": {
+            "value": 17.25,
+            "at_us": 18003000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 1.0,
+          "rounds": 0,
+          "xp_earned": 0.0,
+          "xp_unspent": 0.0
+        }
+      },
+      {
+        "unit": "u-rifle-4",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 64.0,
+        "max_hp": 100.0,
+        "position": [
+          4230.5,
+          25120.0,
+          41.0
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "carried",
+          "ap": {
+            "value": 17.25,
+            "at_us": 18003000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.55,
+          "rounds": 4,
+          "xp_earned": 75.0,
+          "xp_unspent": 5.0,
+          "transport": "u-jeep-7",
+          "moving_until_us": 18040000000,
+          "busy_until_us": 18006000000,
+          "observing_until_us": 19800000000
+        }
+      },
+      {
+        "unit": "u-heli-2",
+        "unit_type": "helicopter",
+        "section": "s-8f2a",
+        "hp": 310.0,
+        "max_hp": 400.0,
+        "position": [
+          4600.0,
+          25900.5,
+          120.0
+        ],
+        "flying": true,
+        "weapon": "machine_gun"
+      }
+    ],
+    "hqs": [
+      {
+        "team": "team-red",
+        "position": [
+          4990.0,
+          1490.0,
+          31.0
+        ],
+        "hp": 1000.0,
+        "max_hp": 1000.0,
+        "ap": {
+          "value": 17.25,
+          "at_us": 18003000000,
+          "per_hour": 1.0,
+          "max": 30.0
+        }
+      },
+      {
+        "team": "team-blue",
+        "position": [
+          5000.0,
+          48500.0,
+          12.5
+        ],
+        "hp": 640.0,
+        "max_hp": 1000.0
+      }
+    ],
+    "relics": [
+      {
+        "relic": "relic-3",
+        "position": [
+          4750.0,
+          18300.0,
+          22.0
+        ],
+        "owner": "team-red"
+      },
+      {
+        "relic": "relic-4",
+        "position": [
+          3000.0,
+          23500.0,
+          9.0
+        ]
+      }
+    ],
+    "hold": {
+      "team": "team-red",
+      "since_us": 14400000000,
+      "wins_at_us": 100800000000
+    },
+    "world": [
+      {
+        "type": "structure_built",
+        "site": "site-12",
+        "structure": "wall",
+        "cells": [
+          [
+            421,
+            2511
+          ],
+          [
+            422,
+            2511
+          ]
+        ]
+      },
+      {
+        "type": "object_damaged",
+        "object": "building",
+        "cells": [
+          [
+            430,
+            2520
+          ]
+        ],
+        "hp": 220.0
+      },
+      {
+        "type": "object_destroyed",
+        "object": "tree",
+        "cells": [
+          [
+            425,
+            2512
+          ]
+        ]
+      },
+      {
+        "type": "crater_dug",
+        "at": [
+          4260.0,
+          25150.0,
+          40.0
+        ],
+        "radius_m": 8.0,
+        "depth_m": 1.5
+      }
+    ]
+  },
+  "tick_update": {
+    "v": 1,
+    "type": "tick_update",
+    "at_us": 18004200000,
+    "moved": [
+      {
+        "unit": "u-jeep-0",
+        "at": [
+          4800.37,
+          25600.12,
+          38.4
+        ]
+      }
+    ],
+    "appeared": [
+      {
+        "unit": "u-enemy-6",
+        "unit_type": "tank",
+        "section": "s-8f2a",
+        "hp": 600.0,
+        "max_hp": 600.0,
+        "position": [
+          4900.0,
+          25800.0,
+          37.0
+        ],
+        "flying": false,
+        "weapon": "anti_tank"
+      }
+    ],
+    "gone": [
+      "u-heli-2"
+    ],
+    "events": [
+      {
+        "type": "move_started",
+        "mover": "u-jeep-0",
+        "arrives_at_us": 18030000000
+      }
+    ],
+    "bursts": [
+      {
+        "attacker": "u-rifle-1",
+        "section": "s-1c9e",
+        "weapon": "machine_gun",
+        "shots": 8,
+        "hits": 3,
+        "impacts": [
+          {
+            "target": "u-enemy-6",
+            "target_type": "tank",
+            "damage": 7.5,
+            "friendly": false,
+            "result": "damaged"
+          }
+        ]
+      }
+    ],
+    "unseen_hits": [
+      {
+        "target": "u-rifle-3",
+        "target_type": "soldier",
+        "damage": 40.0,
+        "friendly": false,
+        "result": "damaged"
+      }
+    ],
+    "own_units": [
+      {
+        "unit": "u-rifle-1",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 97.5,
+        "max_hp": 100.0,
+        "position": [
+          4230.5,
+          25113.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "machine_gun",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 29.0,
+            "at_us": 18001000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 9,
+          "xp_earned": 121.5,
+          "xp_unspent": 20.0
+        }
+      }
+    ],
+    "section": {
+      "money": 1250,
+      "xp": 340.5,
+      "stored_weapons": [
+        "anti_tank",
+        "machine_gun"
+      ],
+      "prisoners": [],
+      "offers": []
+    },
+    "hqs": [
+      {
+        "team": "team-blue",
+        "position": [
+          5000.0,
+          48500.0,
+          12.5
+        ],
+        "hp": 600.0,
+        "max_hp": 1000.0
+      }
+    ],
+    "hqs_gone": [
+      "team-green"
+    ],
+    "relics": [
+      {
+        "relic": "relic-4",
+        "position": [
+          3010.0,
+          23500.0,
+          9.0
+        ],
+        "owner": "team-blue"
+      }
+    ]
+  },
+  "relic_alert": {
+    "v": 1,
+    "type": "relic_alert",
+    "at_us": 18720000000,
+    "relic": "relic-3",
+    "team": "team-blue"
+  },
+  "goodbye": {
+    "v": 1,
+    "type": "goodbye",
+    "reason": "battle_ended"
+  },
+  "tick_one_moving_unit": {
+    "v": 1,
+    "type": "tick_update",
+    "at_us": 18004400000,
+    "moved": [
+      {
+        "unit": "u-jeep-0",
+        "at": [
+          4800.37,
+          25600.12,
+          38.4
+        ]
+      }
+    ],
+    "appeared": [],
+    "gone": [],
+    "events": [],
+    "bursts": [],
+    "unseen_hits": [],
+    "own_units": [],
+    "hqs": [],
+    "hqs_gone": [],
+    "relics": []
+  },
+  "tick_ten_moving_vehicles": {
+    "v": 1,
+    "type": "tick_update",
+    "at_us": 18004600000,
+    "moved": [
+      {
+        "unit": "u-jeep-0",
+        "at": [
+          4800.37,
+          25600.12,
+          38.4
+        ]
+      },
+      {
+        "unit": "u-tank-1",
+        "at": [
+          4835.87,
+          25587.87,
+          38.4
+        ]
+      },
+      {
+        "unit": "u-jeep-2",
+        "at": [
+          4871.37,
+          25575.62,
+          38.4
+        ]
+      },
+      {
+        "unit": "u-tank-3",
+        "at": [
+          4906.87,
+          25563.37,
+          38.4
+        ]
+      },
+      {
+        "unit": "u-jeep-4",
+        "at": [
+          4942.37,
+          25551.12,
+          38.4
+        ]
+      },
+      {
+        "unit": "u-tank-5",
+        "at": [
+          4977.87,
+          25538.87,
+          38.4
+        ]
+      },
+      {
+        "unit": "u-jeep-6",
+        "at": [
+          5013.37,
+          25526.62,
+          38.4
+        ]
+      },
+      {
+        "unit": "u-tank-7",
+        "at": [
+          5048.87,
+          25514.37,
+          38.4
+        ]
+      },
+      {
+        "unit": "u-jeep-8",
+        "at": [
+          5084.37,
+          25502.12,
+          38.4
+        ]
+      },
+      {
+        "unit": "u-tank-9",
+        "at": [
+          5119.87,
+          25489.87,
+          38.4
+        ]
+      }
+    ],
+    "appeared": [],
+    "gone": [],
+    "events": [],
+    "bursts": [],
+    "unseen_hits": [],
+    "own_units": [],
+    "hqs": [],
+    "hqs_gone": [],
+    "relics": []
+  },
+  "tick_rifle_shot": {
+    "v": 1,
+    "type": "tick_update",
+    "at_us": 18004800000,
+    "moved": [],
+    "appeared": [],
+    "gone": [],
+    "events": [
+      {
+        "type": "attacked",
+        "attacker": "u-rifle-5",
+        "section": "s-1c9e",
+        "weapon": "rifle",
+        "hit": true,
+        "impacts": [
+          {
+            "target": "u-enemy-6",
+            "target_type": "soldier",
+            "damage": 12.0,
+            "friendly": false,
+            "result": "damaged"
+          }
+        ]
+      }
+    ],
+    "bursts": [],
+    "unseen_hits": [],
+    "own_units": [],
+    "hqs": [],
+    "hqs_gone": [],
+    "relics": []
+  },
+  "section_view_16_units": {
+    "v": 1,
+    "type": "section_view",
+    "at_us": 18003000000,
+    "section": {
+      "money": 1250,
+      "xp": 340.5,
+      "stored_weapons": [
+        "anti_tank",
+        "machine_gun"
+      ],
+      "prisoners": [],
+      "offers": []
+    },
+    "units": [
+      {
+        "unit": "u-rifle-0",
+        "unit_type": "commander",
+        "section": "s-1c9e",
+        "hp": 100.0,
+        "max_hp": 100.0,
+        "position": [
+          4210.5,
+          25110.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "machine_gun",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 30.0,
+            "at_us": 18000000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 10,
+          "xp_earned": 120.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-1",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 97.5,
+        "max_hp": 100.0,
+        "position": [
+          4230.5,
+          25113.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "machine_gun",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 29.0,
+            "at_us": 18001000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 9,
+          "xp_earned": 121.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-2",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 95.0,
+        "max_hp": 100.0,
+        "position": [
+          4250.5,
+          25116.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "machine_gun",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 28.0,
+            "at_us": 18002000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 8,
+          "xp_earned": 122.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-3",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 92.5,
+        "max_hp": 100.0,
+        "position": [
+          4270.5,
+          25119.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 27.0,
+            "at_us": 18003000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 7,
+          "xp_earned": 123.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-4",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 90.0,
+        "max_hp": 100.0,
+        "position": [
+          4290.5,
+          25122.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 26.0,
+            "at_us": 18004000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 6,
+          "xp_earned": 124.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-5",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 87.5,
+        "max_hp": 100.0,
+        "position": [
+          4310.5,
+          25125.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 25.0,
+            "at_us": 18005000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 5,
+          "xp_earned": 125.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-6",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 85.0,
+        "max_hp": 100.0,
+        "position": [
+          4330.5,
+          25128.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 24.0,
+            "at_us": 18006000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 4,
+          "xp_earned": 126.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-7",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 82.5,
+        "max_hp": 100.0,
+        "position": [
+          4350.5,
+          25131.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 23.0,
+            "at_us": 18007000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 3,
+          "xp_earned": 127.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-8",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 80.0,
+        "max_hp": 100.0,
+        "position": [
+          4370.5,
+          25134.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 22.0,
+            "at_us": 18008000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 2,
+          "xp_earned": 128.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-9",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 77.5,
+        "max_hp": 100.0,
+        "position": [
+          4390.5,
+          25137.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 21.0,
+            "at_us": 18009000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 1,
+          "xp_earned": 129.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-10",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 75.0,
+        "max_hp": 100.0,
+        "position": [
+          4410.5,
+          25140.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 20.0,
+            "at_us": 18010000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 10,
+          "xp_earned": 130.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-11",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 72.5,
+        "max_hp": 100.0,
+        "position": [
+          4430.5,
+          25143.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 19.0,
+            "at_us": 18011000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 9,
+          "xp_earned": 131.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-12",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 70.0,
+        "max_hp": 100.0,
+        "position": [
+          4450.5,
+          25146.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 18.0,
+            "at_us": 18012000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 8,
+          "xp_earned": 132.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-13",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 67.5,
+        "max_hp": 100.0,
+        "position": [
+          4470.5,
+          25149.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 17.0,
+            "at_us": 18013000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 7,
+          "xp_earned": 133.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-14",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 65.0,
+        "max_hp": 100.0,
+        "position": [
+          4490.5,
+          25152.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 16.0,
+            "at_us": 18014000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 6,
+          "xp_earned": 134.5,
+          "xp_unspent": 20.0
+        }
+      },
+      {
+        "unit": "u-rifle-15",
+        "unit_type": "soldier",
+        "section": "s-1c9e",
+        "hp": 62.5,
+        "max_hp": 100.0,
+        "position": [
+          4510.5,
+          25155.25,
+          42.5
+        ],
+        "flying": false,
+        "weapon": "rifle",
+        "private": {
+          "place": "deployed",
+          "ap": {
+            "value": 15.0,
+            "at_us": 18015000000,
+            "per_hour": 1.0,
+            "max": 30.0
+          },
+          "morale": 0.8,
+          "rounds": 5,
+          "xp_earned": 135.5,
+          "xp_unspent": 20.0
+        }
+      }
+    ],
+    "hqs": [
+      {
+        "team": "team-red",
+        "position": [
+          4990.0,
+          1490.0,
+          31.0
+        ],
+        "hp": 1000.0,
+        "max_hp": 1000.0,
+        "ap": {
+          "value": 17.25,
+          "at_us": 18003000000,
+          "per_hour": 1.0,
+          "max": 30.0
+        }
+      }
+    ],
+    "relics": [
+      {
+        "relic": "relic-1",
+        "position": [
+          3050.0,
+          12000.0,
+          20.0
+        ]
+      },
+      {
+        "relic": "relic-2",
+        "position": [
+          3100.0,
+          17000.0,
+          20.0
+        ],
+        "owner": "team-red"
+      },
+      {
+        "relic": "relic-3",
+        "position": [
+          3150.0,
+          22000.0,
+          20.0
+        ]
+      },
+      {
+        "relic": "relic-4",
+        "position": [
+          3200.0,
+          27000.0,
+          20.0
+        ],
+        "owner": "team-red"
+      },
+      {
+        "relic": "relic-5",
+        "position": [
+          3250.0,
+          32000.0,
+          20.0
+        ]
+      },
+      {
+        "relic": "relic-6",
+        "position": [
+          3300.0,
+          37000.0,
+          20.0
+        ],
+        "owner": "team-red"
+      },
+      {
+        "relic": "relic-7",
+        "position": [
+          3350.0,
+          42000.0,
+          20.0
+        ]
+      },
+      {
+        "relic": "relic-8",
+        "position": [
+          3400.0,
+          47000.0,
+          20.0
+        ],
+        "owner": "team-red"
+      }
+    ],
+    "world": []
+  },
+  "tick_unseen_hit": {
+    "v": 1,
+    "type": "tick_update",
+    "at_us": 18005000000,
+    "moved": [],
+    "appeared": [],
+    "gone": [],
+    "events": [],
+    "bursts": [],
+    "unseen_hits": [
+      {
+        "target": "u-rifle-3",
+        "target_type": "soldier",
+        "damage": 12.0,
+        "friendly": false,
+        "result": "damaged"
+      }
+    ],
+    "own_units": [],
+    "hqs": [],
+    "hqs_gone": [],
+    "relics": []
+  }
+}

@@ -11,6 +11,7 @@ import 'dart:typed_data';
 
 import 'package:battle_protocol/battle_protocol.dart';
 
+import '../test/helpers/message_samples.dart';
 import '../test/helpers/samples.dart';
 
 const _binary = BinaryProtocolCodec();
@@ -27,6 +28,18 @@ void main() {
   );
   _write('events', sampleEvents, _binary.encodeEvent, _json.encodeEvent);
   _write('entries', sampleEntries, _binary.encodeEntry, _json.encodeEntry);
+  _write(
+    'client_messages',
+    sampleClientMessages,
+    _binary.encodeClientMessage,
+    _json.encodeClientMessage,
+  );
+  _write(
+    'host_messages',
+    sampleHostMessages,
+    _binary.encodeHostMessage,
+    _json.encodeHostMessage,
+  );
   final log = File('$_dir/log.hex');
   if (!log.existsSync()) {
     log.writeAsStringSync(
