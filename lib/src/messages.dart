@@ -498,6 +498,7 @@ final class UnitView extends Equatable {
     required this.unitId,
     required this.unitType,
     required this.sectionId,
+    required this.team,
     required this.hp,
     required this.maxHp,
     this.position,
@@ -514,6 +515,10 @@ final class UnitView extends Equatable {
 
   /// Its section.
   final String sectionId;
+
+  /// Its section's team: a unit seen shows whether it is a friend
+  /// (Q-MAP-27, assumed).
+  final String team;
 
   /// Its hit points.
   final double hp;
@@ -538,6 +543,7 @@ final class UnitView extends Equatable {
     unitId,
     unitType,
     sectionId,
+    team,
     hp,
     maxHp,
     position,

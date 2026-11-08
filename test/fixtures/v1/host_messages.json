@@ -61,6 +61,7 @@
         "unit": "u-rifle-1",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 97.5,
         "max_hp": 100.0,
         "position": [
@@ -88,6 +89,7 @@
         "unit": "u-truck-2",
         "unit_type": "truck",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 200.0,
         "max_hp": 200.0,
         "flying": false,
@@ -109,6 +111,7 @@
         "unit": "u-rifle-4",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 64.0,
         "max_hp": 100.0,
         "position": [
@@ -140,6 +143,7 @@
         "unit": "u-heli-2",
         "unit_type": "helicopter",
         "section": "s-8f2a",
+        "team": "team-blue",
         "hp": 310.0,
         "max_hp": 400.0,
         "position": [
@@ -271,6 +275,7 @@
         "unit": "u-enemy-6",
         "unit_type": "tank",
         "section": "s-8f2a",
+        "team": "team-blue",
         "hp": 600.0,
         "max_hp": 600.0,
         "position": [
@@ -339,6 +344,7 @@
         "unit": "u-rifle-1",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 97.5,
         "max_hp": 100.0,
         "position": [
@@ -608,6 +614,7 @@
         "unit": "u-rifle-0",
         "unit_type": "commander",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 100.0,
         "max_hp": 100.0,
         "position": [
@@ -635,6 +642,7 @@
         "unit": "u-rifle-1",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 97.5,
         "max_hp": 100.0,
         "position": [
@@ -662,6 +670,7 @@
         "unit": "u-rifle-2",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 95.0,
         "max_hp": 100.0,
         "position": [
@@ -689,6 +698,7 @@
         "unit": "u-rifle-3",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 92.5,
         "max_hp": 100.0,
         "position": [
@@ -716,6 +726,7 @@
         "unit": "u-rifle-4",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 90.0,
         "max_hp": 100.0,
         "position": [
@@ -743,6 +754,7 @@
         "unit": "u-rifle-5",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 87.5,
         "max_hp": 100.0,
         "position": [
@@ -770,6 +782,7 @@
         "unit": "u-rifle-6",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 85.0,
         "max_hp": 100.0,
         "position": [
@@ -797,6 +810,7 @@
         "unit": "u-rifle-7",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 82.5,
         "max_hp": 100.0,
         "position": [
@@ -824,6 +838,7 @@
         "unit": "u-rifle-8",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 80.0,
         "max_hp": 100.0,
         "position": [
@@ -851,6 +866,7 @@
         "unit": "u-rifle-9",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 77.5,
         "max_hp": 100.0,
         "position": [
@@ -878,6 +894,7 @@
         "unit": "u-rifle-10",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 75.0,
         "max_hp": 100.0,
         "position": [
@@ -905,6 +922,7 @@
         "unit": "u-rifle-11",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 72.5,
         "max_hp": 100.0,
         "position": [
@@ -932,6 +950,7 @@
         "unit": "u-rifle-12",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 70.0,
         "max_hp": 100.0,
         "position": [
@@ -959,6 +978,7 @@
         "unit": "u-rifle-13",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 67.5,
         "max_hp": 100.0,
         "position": [
@@ -986,6 +1006,7 @@
         "unit": "u-rifle-14",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 65.0,
         "max_hp": 100.0,
         "position": [
@@ -1013,6 +1034,7 @@
         "unit": "u-rifle-15",
         "unit_type": "soldier",
         "section": "s-1c9e",
+        "team": "team-red",
         "hp": 62.5,
         "max_hp": 100.0,
         "position": [

@@ -235,6 +235,7 @@ void _writeUnitView(FieldWriter w, UnitView unit) => w
   ..text('unit', unit.unitId)
   ..text('unit_type', unit.unitType)
   ..text('section', unit.sectionId)
+  ..text('team', unit.team)
   ..number('hp', unit.hp)
   ..number('max_hp', unit.maxHp)
   ..maybe('position', unit.position, (w, k, v) => w.position(k, v))
@@ -250,6 +251,7 @@ UnitView _readUnitView(FieldReader r) => UnitView(
   unitId: r.text('unit'),
   unitType: r.text('unit_type'),
   sectionId: r.text('section'),
+  team: r.text('team'),
   hp: r.number('hp'),
   maxHp: r.number('max_hp'),
   position: r.maybe('position', (r, k) => r.position(k)),
