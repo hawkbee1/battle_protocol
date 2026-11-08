@@ -261,8 +261,8 @@ final class TickUpdate extends HostMessage {
   /// The battle time.
   final Duration at;
 
-  /// The positions of the moving units it sees, sent at 5 Hz while they
-  /// move.
+  /// The positions of the units it sees that moved: sent when a unit's
+  /// position changes (stack decision 3, decision 236).
   final List<UnitPosition> moved;
 
   /// The units that came into its sight, whole.
@@ -541,8 +541,8 @@ final class UnitView extends Equatable {
 }
 
 /// {@template unit_position}
-/// Where the moving unit [unitId] is (stack decision 3: 5 Hz while it
-/// moves), quantised to the centimetre as [Position] is.
+/// Where the unit [unitId] moved to (stack decision 3, decision 236),
+/// quantised to the centimetre as [Position] is.
 /// {@endtemplate}
 final class UnitPosition extends Equatable {
   /// {@macro unit_position}
