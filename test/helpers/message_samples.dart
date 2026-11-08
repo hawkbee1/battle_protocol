@@ -239,12 +239,27 @@ final sampleHostMessages = <String, HostMessage>{
       ),
     ],
     unseenHits: const [
-      Impact(
+      UnseenHit(
         targetId: 'u-rifle-3',
-        targetType: 'soldier',
         damage: 40,
-        friendly: false,
         result: ImpactResult.damaged,
+      ),
+    ],
+    fired: const [
+      Fired(
+        attackerId: 'u-enemy-6',
+        sectionId: 's-8f2a',
+        weapon: 'anti_tank',
+        shots: 2,
+        impacts: [
+          Impact(
+            targetId: 'u-rifle-1',
+            targetType: 'soldier',
+            damage: 30,
+            friendly: false,
+            result: ImpactResult.damaged,
+          ),
+        ],
       ),
     ],
     ownUnits: [_own(1)],
@@ -304,11 +319,9 @@ final sampleHostMessages = <String, HostMessage>{
   'tick_unseen_hit': const TickUpdate(
     at: Duration(hours: 5, seconds: 5),
     unseenHits: [
-      Impact(
+      UnseenHit(
         targetId: 'u-rifle-3',
-        targetType: 'soldier',
         damage: 12,
-        friendly: false,
         result: ImpactResult.damaged,
       ),
     ],

@@ -251,6 +251,7 @@ final class TickUpdate extends HostMessage {
     this.events = const [],
     this.bursts = const [],
     this.unseenHits = const [],
+    this.fired = const [],
     this.ownUnits = const [],
     this.section,
     this.hqs = const [],
@@ -277,10 +278,15 @@ final class TickUpdate extends HostMessage {
   /// Each unit's shots of the tick, grouped.
   final List<Burst> bursts;
 
-  /// The hits on its units by shooters it does not see: the unit hit and
-  /// the damage, not the shooter nor where the shot came from (COMBAT-57,
-  /// decision 234).
-  final List<Impact> unseenHits;
+  /// The hits on units it sees by shooters it does not see: the unit hit
+  /// and the damage, nothing of the shooter (COMBAT-57, COMBAT-58,
+  /// decisions 234 and 237).
+  final List<UnseenHit> unseenHits;
+
+  /// The shots of units it sees whose outcome it does not see whole: the
+  /// shooter fired, and only the hits on units it sees are given
+  /// (COMBAT-58, decision 237).
+  final List<Fired> fired;
 
   /// Its own units whose private state changed, whole.
   final List<UnitView> ownUnits;
@@ -306,6 +312,7 @@ final class TickUpdate extends HostMessage {
     events,
     bursts,
     unseenHits,
+    fired,
     ownUnits,
     section,
     hqs,
@@ -602,6 +609,67 @@ final class Burst extends Equatable {
     hits,
     impacts,
   ];
+}
+
+/// {@template unseen_hit}
+/// [targetId], a unit the section sees, was hit for [damage] with
+/// [result] by a shooter the section does not see: nothing of the shooter,
+/// not even whether it is a friend (COMBAT-57, decision 234).
+/// {@endtemplate}
+final class UnseenHit extends Equatable {
+  /// {@macro unseen_hit}
+  const new({
+    required this.targetId,
+    required this.damage,
+    required this.result,
+  });
+
+  /// The unit hit.
+  final String targetId;
+
+  /// The damage it took.
+  final double damage;
+
+  /// What became of it.
+  final ImpactResult result;
+
+  @override
+  List<Object?> get props => [targetId, damage, result];
+}
+
+/// {@template fired}
+/// [attackerId] of [sectionId], a unit the section sees, fired [shots]
+/// with [weapon], and the section does not see their whole outcome: their
+/// target, or whether they hit, is unknown to it. [impacts] are only the
+/// hits on units it sees (COMBAT-58, decision 237).
+/// {@endtemplate}
+final class Fired extends Equatable {
+  /// {@macro fired}
+  const new({
+    required this.attackerId,
+    required this.sectionId,
+    required this.weapon,
+    required this.shots,
+    this.impacts = const [],
+  });
+
+  /// The shooter.
+  final String attackerId;
+
+  /// Its section.
+  final String sectionId;
+
+  /// Its weapon.
+  final String weapon;
+
+  /// The shots fired in the update.
+  final int shots;
+
+  /// The hits it sees.
+  final List<Impact> impacts;
+
+  @override
+  List<Object?> get props => [attackerId, sectionId, weapon, shots, impacts];
 }
 
 /// {@template hq_view}

@@ -112,7 +112,8 @@ void writeHostMessage(FieldWriter w, HostMessage message) {
         ..texts('gone', message.gone)
         ..items('events', message.events, writeEvent)
         ..items('bursts', message.bursts, _writeBurst)
-        ..items('unseen_hits', message.unseenHits, _writeImpact)
+        ..items('unseen_hits', message.unseenHits, _writeUnseenHit)
+        ..items('fired', message.fired, _writeFired)
         ..items('own_units', message.ownUnits, _writeUnitView)
         ..maybe(
           'section',
@@ -171,7 +172,8 @@ HostMessage readHostMessage(FieldReader r) =>
         gone: r.texts('gone'),
         events: r.items('events', readEvent),
         bursts: r.items('bursts', _readBurst),
-        unseenHits: r.items('unseen_hits', _readImpact),
+        unseenHits: r.items('unseen_hits', _readUnseenHit),
+        fired: r.items('fired', _readFired),
         ownUnits: r.items('own_units', _readUnitView),
         section: r.maybe('section', (r, k) => r.item(k, _readSectionPrivate)),
         hqs: r.items('hqs', _readHqView),
@@ -277,6 +279,32 @@ Burst _readBurst(FieldReader r) => Burst(
   weapon: r.text('weapon'),
   shots: r.integer('shots'),
   hits: r.integer('hits'),
+  impacts: r.items('impacts', _readImpact),
+);
+
+void _writeUnseenHit(FieldWriter w, UnseenHit hit) => w
+  ..text('target', hit.targetId)
+  ..number('damage', hit.damage)
+  ..choice('result', hit.result);
+
+UnseenHit _readUnseenHit(FieldReader r) => UnseenHit(
+  targetId: r.text('target'),
+  damage: r.number('damage'),
+  result: r.choice('result', ImpactResult.values),
+);
+
+void _writeFired(FieldWriter w, Fired fired) => w
+  ..text('attacker', fired.attackerId)
+  ..text('section', fired.sectionId)
+  ..text('weapon', fired.weapon)
+  ..integer('shots', fired.shots)
+  ..items('impacts', fired.impacts, _writeImpact);
+
+Fired _readFired(FieldReader r) => Fired(
+  attackerId: r.text('attacker'),
+  sectionId: r.text('section'),
+  weapon: r.text('weapon'),
+  shots: r.integer('shots'),
   impacts: r.items('impacts', _readImpact),
 );
 

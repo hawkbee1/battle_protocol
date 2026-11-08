@@ -313,10 +313,25 @@
     "unseen_hits": [
       {
         "target": "u-rifle-3",
-        "target_type": "soldier",
         "damage": 40.0,
-        "friendly": false,
         "result": "damaged"
+      }
+    ],
+    "fired": [
+      {
+        "attacker": "u-enemy-6",
+        "section": "s-8f2a",
+        "weapon": "anti_tank",
+        "shots": 2,
+        "impacts": [
+          {
+            "target": "u-rifle-1",
+            "target_type": "soldier",
+            "damage": 30.0,
+            "friendly": false,
+            "result": "damaged"
+          }
+        ]
       }
     ],
     "own_units": [
@@ -416,6 +431,7 @@
     "events": [],
     "bursts": [],
     "unseen_hits": [],
+    "fired": [],
     "own_units": [],
     "hqs": [],
     "hqs_gone": [],
@@ -512,6 +528,7 @@
     "events": [],
     "bursts": [],
     "unseen_hits": [],
+    "fired": [],
     "own_units": [],
     "hqs": [],
     "hqs_gone": [],
@@ -544,6 +561,29 @@
     ],
     "bursts": [],
     "unseen_hits": [],
+    "fired": [],
+    "own_units": [],
+    "hqs": [],
+    "hqs_gone": [],
+    "relics": []
+  },
+  "tick_unseen_hit": {
+    "v": 1,
+    "type": "tick_update",
+    "at_us": 18005000000,
+    "moved": [],
+    "appeared": [],
+    "gone": [],
+    "events": [],
+    "bursts": [],
+    "unseen_hits": [
+      {
+        "target": "u-rifle-3",
+        "damage": 12.0,
+        "result": "damaged"
+      }
+    ],
+    "fired": [],
     "own_units": [],
     "hqs": [],
     "hqs_gone": [],
@@ -1086,28 +1126,5 @@
       }
     ],
     "world": []
-  },
-  "tick_unseen_hit": {
-    "v": 1,
-    "type": "tick_update",
-    "at_us": 18005000000,
-    "moved": [],
-    "appeared": [],
-    "gone": [],
-    "events": [],
-    "bursts": [],
-    "unseen_hits": [
-      {
-        "target": "u-rifle-3",
-        "target_type": "soldier",
-        "damage": 12.0,
-        "friendly": false,
-        "result": "damaged"
-      }
-    ],
-    "own_units": [],
-    "hqs": [],
-    "hqs_gone": [],
-    "relics": []
   }
 }

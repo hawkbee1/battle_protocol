@@ -87,7 +87,21 @@ void main() {
       expect(viaBinary(tick), equals(tick));
       expect(encoded, isNot(contains('attacker')));
       expect(encoded, isNot(contains('u-enemy')));
+      expect(encoded, isNot(contains('friendly')));
       expect((viaBinary(tick) as TickUpdate).unseenHits.single.damage, 12);
+    });
+
+    test('COMBAT-58 decision 237 a shot whose outcome the section does not '
+        'see shows the shooter firing, with no target and no hit or miss', () {
+      final tick = sampleHostMessages['tick_update']! as TickUpdate;
+      final fired =
+          (jsonOf(tick)['fired']! as List<Object?>).single!
+              as Map<String, Object?>;
+
+      expect(viaBinary(tick), equals(tick));
+      expect(fired.keys, {'attacker', 'section', 'weapon', 'shots', 'impacts'});
+      expect(fired, isNot(contains('hit')));
+      expect(fired, isNot(contains('hits')));
     });
 
     test('stack decision 3 a unit that stands still sends nothing: an empty '
