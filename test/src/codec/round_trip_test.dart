@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:battle_protocol/battle_protocol.dart';
 import 'package:test/test.dart';
 
+import '../../helpers/message_samples.dart';
 import '../../helpers/samples.dart';
 
 void main() {
@@ -25,6 +26,16 @@ void main() {
         for (final MapEntry(:key, :value) in sampleEvents.entries) {
           test('the event $key', () {
             expect(_event(codec, value), equals(value));
+          });
+        }
+        for (final MapEntry(:key, :value) in sampleClientMessages.entries) {
+          test('the client message $key', () {
+            expect(_clientMessage(codec, value), equals(value));
+          });
+        }
+        for (final MapEntry(:key, :value) in sampleHostMessages.entries) {
+          test('the host message $key', () {
+            expect(_hostMessage(codec, value), equals(value));
           });
         }
         for (final MapEntry(:key, :value) in sampleEntries.entries) {
@@ -221,3 +232,27 @@ LogEntry _entry(ProtocolCodec<Object> codec, LogEntry entry) => switch (codec) {
   JsonProtocolCodec() => codec.decodeEntry(codec.encodeEntry(entry)),
   _ => throw UnimplementedError(),
 };
+
+ClientMessage _clientMessage(
+  ProtocolCodec<Object> codec,
+  ClientMessage message,
+) => switch (codec) {
+  BinaryProtocolCodec() => codec.decodeClientMessage(
+    codec.encodeClientMessage(message),
+  ),
+  JsonProtocolCodec() => codec.decodeClientMessage(
+    codec.encodeClientMessage(message),
+  ),
+  _ => throw UnimplementedError(),
+};
+
+HostMessage _hostMessage(ProtocolCodec<Object> codec, HostMessage message) =>
+    switch (codec) {
+      BinaryProtocolCodec() => codec.decodeHostMessage(
+        codec.encodeHostMessage(message),
+      ),
+      JsonProtocolCodec() => codec.decodeHostMessage(
+        codec.encodeHostMessage(message),
+      ),
+      _ => throw UnimplementedError(),
+    };

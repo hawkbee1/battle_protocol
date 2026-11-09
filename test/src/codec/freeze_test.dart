@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:battle_protocol/battle_protocol.dart';
 import 'package:test/test.dart';
 
+import '../../helpers/message_samples.dart';
 import '../../helpers/samples.dart';
 
 /// The committed encodings of version 1 (`tool/write_samples.dart` adds
@@ -88,6 +89,23 @@ void main() {
     json.decodeEntry,
   );
 
+  freeze(
+    'client_messages',
+    sampleClientMessages,
+    binary.encodeClientMessage,
+    binary.decodeClientMessage,
+    json.encodeClientMessage,
+    json.decodeClientMessage,
+  );
+  freeze(
+    'host_messages',
+    sampleHostMessages,
+    binary.encodeHostMessage,
+    binary.decodeHostMessage,
+    json.encodeHostMessage,
+    json.decodeHostMessage,
+  );
+
   group('version 1 battle log', () {
     final log = _bytes(File('$_fixtures/log.hex').readAsStringSync().trim());
     final entries = sampleEntries.values.toList();
@@ -98,6 +116,49 @@ void main() {
 
     test('decodes from its committed sample', () {
       expect(binary.decodeLog(log), equals(entries));
+    });
+  });
+
+  group('the message samples', () {
+    void coverEveryType(
+      Iterable<Object> messages,
+      String Function(Object) encode,
+      Object Function(Uint8List) decode,
+      int types,
+    ) {
+      final names = {
+        for (final message in messages)
+          (jsonDecode(encode(message)) as Map)['type'],
+      };
+      expect(names, hasLength(types));
+      expect(
+        () => decode(Uint8List.fromList([protocolVersion, types])),
+        throwsA(
+          isA<ProtocolException>().having(
+            (e) => e.message,
+            'message',
+            contains('type has no value $types'),
+          ),
+        ),
+      );
+    }
+
+    test('cover every client message type', () {
+      coverEveryType(
+        sampleClientMessages.values,
+        (m) => json.encodeClientMessage(m as ClientMessage),
+        binary.decodeClientMessage,
+        4,
+      );
+    });
+
+    test('cover every host message type', () {
+      coverEveryType(
+        sampleHostMessages.values,
+        (m) => json.encodeHostMessage(m as HostMessage),
+        binary.decodeHostMessage,
+        8,
+      );
     });
   });
 

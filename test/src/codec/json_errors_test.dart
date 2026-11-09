@@ -60,6 +60,19 @@ void main() {
       );
     });
 
+    test('a client message of another version, with that version', () {
+      expect(
+        () => codec.decodeClientMessage('{"v":3,"type":"heartbeat"}'),
+        throwsA(
+          isA<UnsupportedVersionException>().having(
+            (e) => e.version,
+            'version',
+            3,
+          ),
+        ),
+      );
+    });
+
     test('a missing field', () {
       expect(
         () => codec.decodeEvent(event({'type': 'unit_stored'})),

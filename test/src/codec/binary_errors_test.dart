@@ -43,6 +43,19 @@ void main() {
       );
     });
 
+    test('a client message of another version, with that version', () {
+      expect(
+        () => codec.decodeClientMessage(bytes([2, 0])),
+        throwsA(
+          isA<UnsupportedVersionException>().having(
+            (e) => e.version,
+            'version',
+            2,
+          ),
+        ),
+      );
+    });
+
     test('bytes after the message', () {
       final encoded = codec.encodeEvent(const UnitStored(unitId: 'u'));
       expect(
