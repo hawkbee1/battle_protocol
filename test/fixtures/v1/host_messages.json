@@ -1148,5 +1148,51 @@
       }
     ],
     "world": []
+  },
+  "roster": {
+    "v": 1,
+    "type": "roster",
+    "units": [
+      {
+        "unit_type": "soldier",
+        "category": "soldier",
+        "price": 100,
+        "weapons": [
+          "rifle",
+          "machine_gun"
+        ]
+      },
+      {
+        "unit_type": "radio",
+        "category": "radio",
+        "price": 100,
+        "weapons": []
+      },
+      {
+        "unit_type": "test_unit",
+        "category": "soldier",
+        "price": 0,
+        "weapons": [
+          "rifle",
+          "machine_gun",
+          "anti_tank",
+          "artillery"
+        ]
+      }
+    ],
+    "weapons": [
+      {
+        "weapon": "rifle",
+        "price": 100
+      },
+      {
+        "weapon": "machine_gun",
+        "price": 100
+      },
+      {
+        "weapon": "anti_tank",
+        "price": 100
+      }
+    ]
   }
 }

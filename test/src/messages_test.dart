@@ -129,6 +129,65 @@ void main() {
     });
   });
 
+  group('the roster', () {
+    late Roster roster;
+
+    setUp(() => roster = sampleHostMessages['roster']! as Roster);
+
+    test('ECO-04 ECO-05 COMBAT-27 lists the unit types and the weapons with '
+        'their prices, in the host order, in both encodings', () {
+      expect(viaBinary(roster), equals(roster));
+      expect(
+        json.decodeHostMessage(json.encodeHostMessage(roster)),
+        equals(roster),
+      );
+      expect(jsonOf(roster), {
+        'v': 1,
+        'type': 'roster',
+        'units': [
+          {
+            'unit_type': 'soldier',
+            'category': 'soldier',
+            'price': 100,
+            'weapons': ['rifle', 'machine_gun'],
+          },
+          {
+            'unit_type': 'radio',
+            'category': 'radio',
+            'price': 100,
+            'weapons': <String>[],
+          },
+          {
+            'unit_type': 'test_unit',
+            'category': 'soldier',
+            'price': 0,
+            'weapons': ['rifle', 'machine_gun', 'anti_tank', 'artillery'],
+          },
+        ],
+        'weapons': [
+          {'weapon': 'rifle', 'price': 100},
+          {'weapon': 'machine_gun', 'price': 100},
+          {'weapon': 'anti_tank', 'price': 100},
+        ],
+      });
+    });
+
+    test('decision 237 carries nothing of any section: no unit, section or '
+        'position', () {
+      final text = json.encodeHostMessage(roster);
+
+      expect(text, isNot(contains('section')));
+      expect(text, isNot(contains('position')));
+      expect(text, isNot(contains('unit_id')));
+    });
+
+    test('an empty roster is a message of its own', () {
+      const empty = Roster(units: [], weapons: []);
+
+      expect(viaBinary(empty), equals(empty));
+    });
+  });
+
   group('client messages', () {
     test('AI-03 an AI agent signs in and sends commands with the same '
         'messages as a player: only its credential differs', () {

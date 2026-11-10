@@ -344,6 +344,72 @@ final class RelicAlert extends HostMessage {
   List<Object?> get props => [at, relicId, team];
 }
 
+/// {@template roster}
+/// What the battle lets the section buy (ECO-04, ECO-05, COMBAT-27): the unit
+/// types with their prices and the weapons with theirs. It comes from the
+/// host's data and the battle's settings, never from a copy in the client:
+/// the test unit is listed only where the battle allows test units (UNIT-44).
+/// Sent after each [SectionView]; the same for every section of a battle, so
+/// it holds nothing a section does not see (decision 237).
+/// {@endtemplate}
+final class Roster extends HostMessage {
+  /// {@macro roster}
+  const new({required this.units, required this.weapons});
+
+  /// The unit types a commander can buy, in the host's order. The commander
+  /// and the guild camp are not for sale here (UNIT-41, ECO-06).
+  final List<RosterUnit> units;
+
+  /// The weapons a commander can buy for the section's storage (COMBAT-27).
+  final List<RosterWeapon> weapons;
+
+  @override
+  List<Object?> get props => [units, weapons];
+}
+
+/// A unit type on sale: its [unitType] (a key of `units.yaml`, which the
+/// client names in its own language), its [category] and its [price] in
+/// whole w€ (decision 112), with the weapons it may equip.
+final class RosterUnit extends Equatable {
+  /// A unit type on sale.
+  const new({
+    required this.unitType,
+    required this.category,
+    required this.price,
+    this.weapons = const [],
+  });
+
+  /// The unit type, a key of `units.yaml`.
+  final String unitType;
+
+  /// Its category, for example `soldier` or `vehicle`.
+  final String category;
+
+  /// The price in w€; its default weapon is included (COMBAT-27).
+  final int price;
+
+  /// The weapon types it may equip (`weapons.allowed` of `units.yaml`).
+  final List<String> weapons;
+
+  @override
+  List<Object?> get props => [unitType, category, price, weapons];
+}
+
+/// A weapon on sale: its [weapon] type and its [price] in whole w€.
+final class RosterWeapon extends Equatable {
+  /// A weapon on sale.
+  const new({required this.weapon, required this.price});
+
+  /// The weapon type, a key of `weapon_types` in `combat.yaml`.
+  final String weapon;
+
+  /// The price in w€.
+  final int price;
+
+  @override
+  List<Object?> get props => [weapon, price];
+}
+
 /// Why the host closes a socket.
 enum GoodbyeReason {
   /// The battle ended.

@@ -157,7 +157,7 @@ void main() {
         sampleHostMessages.values,
         (m) => json.encodeHostMessage(m as HostMessage),
         binary.decodeHostMessage,
-        8,
+        9,
       );
     });
   });
