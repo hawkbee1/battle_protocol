@@ -292,6 +292,30 @@ final sampleHostMessages = <String, HostMessage>{
     team: 'team-blue',
   ),
   'goodbye': const Goodbye(GoodbyeReason.battleEnded),
+  // What a battle with test units lets a section buy (M7.7): prices as in
+  // `economy.yaml`, the allowed weapons as in `units.yaml`.
+  'roster': const Roster(
+    units: [
+      RosterUnit(
+        unitType: 'soldier',
+        category: 'soldier',
+        price: 100,
+        weapons: ['rifle', 'machine_gun'],
+      ),
+      RosterUnit(unitType: 'radio', category: 'radio', price: 100),
+      RosterUnit(
+        unitType: 'test_unit',
+        category: 'soldier',
+        price: 0,
+        weapons: ['rifle', 'machine_gun', 'anti_tank', 'artillery'],
+      ),
+    ],
+    weapons: [
+      RosterWeapon(weapon: 'rifle', price: 100),
+      RosterWeapon(weapon: 'machine_gun', price: 100),
+      RosterWeapon(weapon: 'anti_tank', price: 100),
+    ],
+  ),
   // The sizes of stack/03's traffic estimate.
   'tick_one_moving_unit': TickUpdate(
     at: const Duration(hours: 5, seconds: 4, milliseconds: 400),

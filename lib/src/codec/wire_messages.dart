@@ -17,6 +17,7 @@ enum _HostTag {
   tickUpdate,
   relicAlert,
   goodbye,
+  roster,
 }
 
 /// Writes a client message: its type, then its fields.
@@ -133,6 +134,11 @@ void writeHostMessage(FieldWriter w, HostMessage message) {
       w
         ..choice('type', _HostTag.goodbye)
         ..choice('reason', reason);
+    case Roster(:final units, :final weapons):
+      w
+        ..choice('type', _HostTag.roster)
+        ..items('units', units, _writeRosterUnit)
+        ..items('weapons', weapons, _writeRosterWeapon);
   }
 }
 
@@ -186,7 +192,31 @@ HostMessage readHostMessage(FieldReader r) =>
         team: r.text('team'),
       ),
       _HostTag.goodbye => Goodbye(r.choice('reason', GoodbyeReason.values)),
+      _HostTag.roster => Roster(
+        units: r.items('units', _readRosterUnit),
+        weapons: r.items('weapons', _readRosterWeapon),
+      ),
     };
+
+void _writeRosterUnit(FieldWriter w, RosterUnit unit) => w
+  ..text('unit_type', unit.unitType)
+  ..text('category', unit.category)
+  ..integer('price', unit.price)
+  ..texts('weapons', unit.weapons);
+
+RosterUnit _readRosterUnit(FieldReader r) => RosterUnit(
+  unitType: r.text('unit_type'),
+  category: r.text('category'),
+  price: r.integer('price'),
+  weapons: r.texts('weapons'),
+);
+
+void _writeRosterWeapon(FieldWriter w, RosterWeapon weapon) => w
+  ..text('weapon', weapon.weapon)
+  ..integer('price', weapon.price);
+
+RosterWeapon _readRosterWeapon(FieldReader r) =>
+    RosterWeapon(weapon: r.text('weapon'), price: r.integer('price'));
 
 void _writeTime(FieldWriter w, String key, Duration value) =>
     w.time(key, value);

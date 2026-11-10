@@ -38,6 +38,7 @@ void main() {
       _binary.encodeClientMessage(sampleClientMessages['send_command']!).length,
     ),
     ('command accepted', size('command_accepted')),
+    ('roster, 3 unit types and 3 weapons', size('roster')),
   ]) {
     print('$name: $bytes bytes');
   }
