@@ -201,6 +201,7 @@ final class SectionView extends HostMessage {
   /// {@macro section_view}
   const new({
     required this.at,
+    required this.weather,
     required this.section,
     required this.units,
     required this.hqs,
@@ -211,6 +212,11 @@ final class SectionView extends HostMessage {
 
   /// The battle time.
   final Duration at;
+
+  /// The battle's weather, a key of `terrain.yaml` `weather` (MAP-31):
+  /// every section knows it, and the client needs it to show how far its
+  /// own units see (M7 Issue 9).
+  final String weather;
 
   /// The section's own state.
   final SectionPrivate section;
@@ -234,7 +240,16 @@ final class SectionView extends HostMessage {
   final List<BattleEvent> world;
 
   @override
-  List<Object?> get props => [at, section, units, hqs, relics, hold, world];
+  List<Object?> get props => [
+    at,
+    weather,
+    section,
+    units,
+    hqs,
+    relics,
+    hold,
+    world,
+  ];
 }
 
 /// {@template tick_update}
@@ -245,6 +260,7 @@ final class TickUpdate extends HostMessage {
   /// {@macro tick_update}
   const new({
     required this.at,
+    this.weather,
     this.moved = const [],
     this.appeared = const [],
     this.gone = const [],
@@ -261,6 +277,9 @@ final class TickUpdate extends HostMessage {
 
   /// The battle time.
   final Duration at;
+
+  /// The weather, when it changed (MAP-31).
+  final String? weather;
 
   /// The positions of the units it sees that moved: sent when a unit's
   /// position changes (stack decision 3, decision 236).
@@ -306,6 +325,7 @@ final class TickUpdate extends HostMessage {
   @override
   List<Object?> get props => [
     at,
+    weather,
     moved,
     appeared,
     gone,
@@ -498,6 +518,7 @@ final class UnitPrivate extends Equatable {
   const new({
     required this.place,
     required this.ap,
+    required this.sightRangeM,
     required this.morale,
     required this.rounds,
     required this.xpEarned,
@@ -513,6 +534,12 @@ final class UnitPrivate extends Equatable {
 
   /// Its AP pool.
   final ApView ap;
+
+  /// How far it sees before weather, terrain and height, in metres: its
+  /// vision range after its skills and, while it observes, the observe
+  /// bonus (MAP-31, UNIT-34). The client lights the ground its section sees
+  /// with it (M7 Issue 9); only its own section knows it (decision 237).
+  final double sightRangeM;
 
   /// Its morale.
   final double morale;
@@ -542,6 +569,7 @@ final class UnitPrivate extends Equatable {
   List<Object?> get props => [
     place,
     ap,
+    sightRangeM,
     morale,
     rounds,
     xpEarned,

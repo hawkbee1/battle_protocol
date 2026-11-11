@@ -76,6 +76,26 @@ void main() {
       expect(unit.private!.ap.perHour, equals(1));
       expect(unit.private!.ap.at, equals(const Duration(hours: 5, seconds: 1)));
     });
+
+    test('MAP-31 carries the weather, which every section knows', () {
+      final decoded = viaBinary(view) as SectionView;
+
+      expect(decoded.weather, equals('rain'));
+      expect(jsonOf(view)['weather'], equals('rain'));
+    });
+
+    test('MAP-27 an own unit carries how far it sees, for its section '
+        'only: a unit seen carries nothing of it (decision 237)', () {
+      final units = (viaBinary(view) as SectionView).units;
+      final seen = units.where((unit) => unit.private == null);
+
+      expect(units.first.private!.sightRangeM, equals(60));
+      expect(seen, isNotEmpty);
+      expect(
+        jsonOf(view).toString().split('sight_range_m').length - 1,
+        equals(units.where((unit) => unit.private != null).length),
+      );
+    });
   });
 
   group('the update of a tick', () {
@@ -102,6 +122,18 @@ void main() {
       expect(fired.keys, {'attacker', 'section', 'weapon', 'shots', 'impacts'});
       expect(fired, isNot(contains('hit')));
       expect(fired, isNot(contains('hits')));
+    });
+
+    test('MAP-31 an update carries the weather only when it changed', () {
+      final changed = sampleHostMessages['tick_weather_changed']! as TickUpdate;
+
+      expect((viaBinary(changed) as TickUpdate).weather, equals('fog'));
+      expect(
+        (viaBinary(
+          const TickUpdate(at: Duration(seconds: 1)),
+        ) as TickUpdate).weather,
+        isNull,
+      );
     });
 
     test('stack decision 3 a unit that stands still sends nothing: an empty '

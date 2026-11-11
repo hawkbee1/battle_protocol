@@ -28,6 +28,7 @@
     "v": 1,
     "type": "section_view",
     "at_us": 18003000000,
+    "weather": "rain",
     "section": {
       "money": 1250,
       "xp": 340.5,
@@ -79,6 +80,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 9,
           "xp_earned": 121.5,
@@ -101,6 +103,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 1.0,
           "rounds": 0,
           "xp_earned": 0.0,
@@ -129,6 +132,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.55,
           "rounds": 4,
           "xp_earned": 75.0,
@@ -362,6 +366,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 9,
           "xp_earned": 121.5,
@@ -417,6 +422,69 @@
     "v": 1,
     "type": "goodbye",
     "reason": "battle_ended"
+  },
+  "roster": {
+    "v": 1,
+    "type": "roster",
+    "units": [
+      {
+        "unit_type": "soldier",
+        "category": "soldier",
+        "price": 100,
+        "weapons": [
+          "rifle",
+          "machine_gun"
+        ]
+      },
+      {
+        "unit_type": "radio",
+        "category": "radio",
+        "price": 100,
+        "weapons": []
+      },
+      {
+        "unit_type": "test_unit",
+        "category": "soldier",
+        "price": 0,
+        "weapons": [
+          "rifle",
+          "machine_gun",
+          "anti_tank",
+          "artillery"
+        ]
+      }
+    ],
+    "weapons": [
+      {
+        "weapon": "rifle",
+        "price": 100
+      },
+      {
+        "weapon": "machine_gun",
+        "price": 100
+      },
+      {
+        "weapon": "anti_tank",
+        "price": 100
+      }
+    ]
+  },
+  "tick_weather_changed": {
+    "v": 1,
+    "type": "tick_update",
+    "at_us": 18004200000,
+    "weather": "fog",
+    "moved": [],
+    "appeared": [],
+    "gone": [],
+    "events": [],
+    "bursts": [],
+    "unseen_hits": [],
+    "fired": [],
+    "own_units": [],
+    "hqs": [],
+    "hqs_gone": [],
+    "relics": []
   },
   "tick_one_moving_unit": {
     "v": 1,
@@ -599,6 +667,7 @@
     "v": 1,
     "type": "section_view",
     "at_us": 18003000000,
+    "weather": "rain",
     "section": {
       "money": 1250,
       "xp": 340.5,
@@ -632,6 +701,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 10,
           "xp_earned": 120.5,
@@ -660,6 +730,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 9,
           "xp_earned": 121.5,
@@ -688,6 +759,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 8,
           "xp_earned": 122.5,
@@ -716,6 +788,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 7,
           "xp_earned": 123.5,
@@ -744,6 +817,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 6,
           "xp_earned": 124.5,
@@ -772,6 +846,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 5,
           "xp_earned": 125.5,
@@ -800,6 +875,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 4,
           "xp_earned": 126.5,
@@ -828,6 +904,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 3,
           "xp_earned": 127.5,
@@ -856,6 +933,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 2,
           "xp_earned": 128.5,
@@ -884,6 +962,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 1,
           "xp_earned": 129.5,
@@ -912,6 +991,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 10,
           "xp_earned": 130.5,
@@ -940,6 +1020,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 9,
           "xp_earned": 131.5,
@@ -968,6 +1049,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 8,
           "xp_earned": 132.5,
@@ -996,6 +1078,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 7,
           "xp_earned": 133.5,
@@ -1024,6 +1107,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 6,
           "xp_earned": 134.5,
@@ -1052,6 +1136,7 @@
             "per_hour": 1.0,
             "max": 30.0
           },
+          "sight_range_m": 60.0,
           "morale": 0.8,
           "rounds": 5,
           "xp_earned": 135.5,
@@ -1148,51 +1233,5 @@
       }
     ],
     "world": []
-  },
-  "roster": {
-    "v": 1,
-    "type": "roster",
-    "units": [
-      {
-        "unit_type": "soldier",
-        "category": "soldier",
-        "price": 100,
-        "weapons": [
-          "rifle",
-          "machine_gun"
-        ]
-      },
-      {
-        "unit_type": "radio",
-        "category": "radio",
-        "price": 100,
-        "weapons": []
-      },
-      {
-        "unit_type": "test_unit",
-        "category": "soldier",
-        "price": 0,
-        "weapons": [
-          "rifle",
-          "machine_gun",
-          "anti_tank",
-          "artillery"
-        ]
-      }
-    ],
-    "weapons": [
-      {
-        "weapon": "rifle",
-        "price": 100
-      },
-      {
-        "weapon": "machine_gun",
-        "price": 100
-      },
-      {
-        "weapon": "anti_tank",
-        "price": 100
-      }
-    ]
   }
 }
