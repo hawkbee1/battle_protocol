@@ -576,5 +576,26 @@
     "order": {
       "type": "enter_battle"
     }
+  },
+  "admit_section": {
+    "v": 1,
+    "seq": 1034,
+    "origin": "ai",
+    "sender": {
+      "account": "a-6531d2f0b8c4",
+      "section": "s-1c9e"
+    },
+    "sent_at_us": 3634000125,
+    "order": {
+      "type": "admit_section",
+      "team": "blue",
+      "money": 500,
+      "units": [
+        {
+          "unit": "s-1c9e-commander",
+          "type": "commander"
+        }
+      ]
+    }
   }
 }

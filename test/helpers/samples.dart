@@ -72,6 +72,11 @@ final sampleOrders = <String, Order>{
   'refuse_offer': const RefuseOffer(offerId: 1025),
   'delegate_hq': const DelegateHq(accountId: 'a-6531d2f0b8c4'),
   'enter_battle': const EnterBattle(),
+  'admit_section': const AdmitSection(
+    team: 'blue',
+    money: 500,
+    units: [AdmittedUnit(unitId: 's-1c9e-commander', unitType: 'commander')],
+  ),
 };
 
 const _sender = Sender(accountId: 'a-6531d2f0b8c4', sectionId: 's-1c9e');
