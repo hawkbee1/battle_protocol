@@ -28,6 +28,7 @@ void main() {
       _binary.encodeEvent(shot.events.single).length,
     ),
     ('tick, a hit by an unseen shooter', size('tick_unseen_hit')),
+    ('tick, the weather changed', size('tick_weather_changed')),
     ('whole view, 16 units, 8 relics', size('section_view_16_units')),
     (
       'sign-in (JWT)',

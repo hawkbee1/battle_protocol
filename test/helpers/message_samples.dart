@@ -44,6 +44,7 @@ UnitView _own(int index) => UnitView(
   position: Position.metres(4210.5 + index * 20, 25110.25 + index * 3, 42.5),
   weapon: index < 3 ? 'machine_gun' : 'rifle',
   private: UnitPrivate(
+    sightRangeM: 60,
     place: UnitPlace.deployed,
     ap: ApView(
       value: 30 - index.toDouble(),
@@ -90,6 +91,7 @@ final sampleHostMessages = <String, HostMessage>{
     reason: 'target_not_seen',
   ),
   'section_view': SectionView(
+    weather: 'rain',
     at: const Duration(hours: 5, seconds: 3),
     section: const SectionPrivate(
       money: 1250,
@@ -118,6 +120,7 @@ final sampleHostMessages = <String, HostMessage>{
         hp: 200,
         maxHp: 200,
         private: UnitPrivate(
+          sightRangeM: 60,
           place: UnitPlace.stored,
           ap: _ap,
           morale: 1,
@@ -136,6 +139,7 @@ final sampleHostMessages = <String, HostMessage>{
         position: Position.metres(4230.5, 25120, 41),
         weapon: 'rifle',
         private: const UnitPrivate(
+          sightRangeM: 60,
           place: UnitPlace.carried,
           ap: _ap,
           morale: 0.55,
@@ -317,6 +321,10 @@ final sampleHostMessages = <String, HostMessage>{
     ],
   ),
   // The sizes of stack/03's traffic estimate.
+  'tick_weather_changed': const TickUpdate(
+    at: Duration(hours: 5, seconds: 4, milliseconds: 200),
+    weather: 'fog',
+  ),
   'tick_one_moving_unit': TickUpdate(
     at: const Duration(hours: 5, seconds: 4, milliseconds: 400),
     moved: [_tenVehicles.first],
@@ -356,6 +364,7 @@ final sampleHostMessages = <String, HostMessage>{
     ],
   ),
   'section_view_16_units': SectionView(
+    weather: 'rain',
     at: const Duration(hours: 5, seconds: 3),
     section: _section,
     units: [for (var i = 0; i < 16; i++) _own(i)],
